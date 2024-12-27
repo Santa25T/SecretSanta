@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Word - Password Protected</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Password Overlay -->
+  <div id="password-overlay" class="overlay">
+    <div class="password-container">
+      <h2>Please Enter the Password</h2>
+      <input type="password" id="password-input" placeholder="ur bday ddmmyyyy" maxlength="8">
+      <button onclick="checkPassword()">Submit</button>
+      <p id="error-message" style="color: red; display: none;">Incorrect password. Please try again.</p>
+    </div>
+  </div>
+
+  <!-- Game Content (Initially Hidden) -->
+  <div id="game-content" style="display: none;">
+    <div class="puzzle-container">
+<div id="image-container">
+      <img src="pic.jpeg" alt="Game Image" id="game-image">
+    </div>
+      <h2>Guess the Word</h2>
+      <p> 5 - letter word </p>
+      <!-- Initially Hidden Clue -->
+      <p id="clue-text" style="display:none;">Clue: "I’m your name, but shorter, a nickname, and I’m the one who always shines!"</p>
+
+      <input type="text" id="userGuess" maxlength="5" placeholder="Enter your guess">
+      <button onclick="checkAnswer()">Submit</button>
+
+      <div id="result"></div>
+      <div id="nextClue" style="display:none;">
+        <div class="envelope">
+          <div class="clue-paper" id="clue-paper">
+            Correct! Here's your next clue!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Overlay and blur effect */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.password-container {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+input {
+  padding: 8px;
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Style for Game content */
+.puzzle-container {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  position: relative;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.letter {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.green {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.yellow {
+  background-color: #FFEB3B;
+  color: black;
+}
+
+.gray {
+  background-color: #B0B0B0;
+  color: white;
+}
+
+/* Envelope and Clue Animation */
+#nextClue {
+  display: none;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  animation: revealClue 3s ease-out forwards;
+}
+
+.envelope {
+  width: 200px;
+  height: 130px;
+  background-color: #F1C27D;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #F1C27D;
+  border-radius: 10px 10px 0 0;
+}
+
+.clue-paper {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: revealClueText 3s ease-out forwards;
+}
+
+@keyframes revealClue {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes revealClueText {
+  0% {
+    opacity: 0;
+    top: 50%;
+  }
+  100% {
+    opacity: 1;
+    top: 30%;
+  }
+}
+
+
+#image-container {
+  text-align: center;
+  margin-bottom: 20px; /* Add space between the image and the game */
+}
+
+#game-image {
+  width: 80%; /* Adjust the width as needed */
+  max-width: 500px; /* You can set a max-width to prevent the image from being too large */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
